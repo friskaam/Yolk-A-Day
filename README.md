@@ -105,19 +105,9 @@ Feel free to explore the codebase, contribute, or raise issues.
    - Provide a descriptive title and details for your pull request.
    - Submit the pull request.
 
-### Syncing Fork with Upstream:
-
+### Syncing Fork
 If there are new changes in the original repository and you want to sync your fork:
 
 ```bash
 # Fetch upstream changes
 git fetch upstream
-
-# Switch to your main branch
-git checkout main
-
-# Merge upstream changes into your main branch
-git merge upstream/main
-
-# Push changes to your fork on GitHub
-git push origin main
