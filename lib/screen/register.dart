@@ -12,19 +12,39 @@ class _RegisterState extends State<Register> {
 
   @override
   Widget build(BuildContext context) {
-    return Form(
-      key: _formKey,
-      child: Column(children: [
-        TextFormField(
-          validator: (value) {
-            if (value == null || value.isEmpty) {
-              return 'Please input username';
-            }
+    return Scaffold(
+        body: SafeArea(
+      child: Padding(
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          children: [
+            Row(),
+            Row(
+              children: [
+                Form(
+                  key: _formKey,
+                  child: Column(children: [
+                    Expanded(
+                      child: TextFormField(
+                        decoration: InputDecoration(
+                          labelText: 'Username',
+                        ),
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please input username';
+                          }
 
-            return null;
-          },
+                          return null;
+                        },
+                      ),
+                    )
+                  ]),
+                ),
+              ],
+            ),
+          ],
         ),
-      ]),
-    );
+      ),
+    ));
   }
 }
