@@ -50,16 +50,24 @@ class Loaders {
     );
   }
 
+  static bool isLoadingShowing = false;
+
   static void showLoading() {
-    Get.dialog(
-      const Center(
-        child: CircularProgressIndicator(),
-      ),
-      barrierDismissible: false,
-    );
+    if (!isLoadingShowing) {
+      isLoadingShowing = true;
+      Get.dialog(
+        const Center(
+          child: CircularProgressIndicator(),
+        ),
+        barrierDismissible: false,
+      );
+    }
   }
 
   static void dismissLoading() {
-    Get.back();
+    if (isLoadingShowing) {
+      isLoadingShowing = false;
+      Get.back();
+    }
   }
 }
