@@ -7,6 +7,8 @@ class RegisterController extends GetxController {
   static RegisterController get instance => Get.find();
 
   // variables and controllers for its input
+  final hidePassword = true.obs;
+  final hideConfirmPassword = true.obs;
   final username = TextEditingController();
   final email = TextEditingController();
   final password = TextEditingController();
