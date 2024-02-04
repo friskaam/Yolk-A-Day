@@ -15,7 +15,7 @@ class _LoginState extends State<Login> {
 
   @override
   Widget build(BuildContext context) {
-    final controller = ;
+    // final controller = ;
     return Scaffold(
         body: SingleChildScrollView(
           child: Padding(
@@ -57,11 +57,11 @@ class _LoginState extends State<Login> {
                   height: 149,
                 ),
                 Form(
-                    key: ,
+                    // key: ,
                     child: Column(
                       children: [
                         TextFormField(
-                          controller: controller.emailUsername,
+                          // controller: controller.emailUsername,
                           decoration: const InputDecoration(
                               focusedBorder: OutlineInputBorder(
                                   borderRadius:
@@ -84,13 +84,13 @@ class _LoginState extends State<Login> {
                                   fontFamily: 'Outfit',
                                   fontWeight: FontWeight.normal)),
                           style: const TextStyle(),
-                          validator: ,
+                          // validator: ,
                         ),
                         const SizedBox(
                           height: 15,
                         ),
                         TextFormField(
-                          controller: ,
+                          // controller: ,
                           decoration: const InputDecoration(
                               focusedBorder: OutlineInputBorder(
                                   borderRadius:
@@ -113,7 +113,7 @@ class _LoginState extends State<Login> {
                                   fontFamily: 'Outfit',
                                   fontWeight: FontWeight.normal)),
                           style: const TextStyle(),
-                          validator: ,
+                          // validator: ,
                         ),
                         const SizedBox(
                           height: 47,

@@ -4,11 +4,10 @@ import 'package:get/get.dart';
 
 import 'app.dart';
 
-void main() async {
+Future<void> main() async {
 
   // TODO: widgets binding
-  // final WidgetsBinding widgetsBinding =
-  WidgetsFlutterBinding.ensureInitialized();
+  final WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
 
   // TODO: add GetX local storage
   // await GetStorage.init();

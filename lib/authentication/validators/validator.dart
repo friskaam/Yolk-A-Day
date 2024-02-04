@@ -7,7 +7,9 @@ class FormValidator {
   }
 
   static String? validateUsername(String? value) {
-
+    if (value == null || value.isEmpty) {
+      return 'Username is required';
+    }
     return null;
   }
 
