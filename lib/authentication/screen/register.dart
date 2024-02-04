@@ -1,16 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:iconsax/iconsax.dart';
 import 'package:yolk_a_day/authentication/controllers/register_controller.dart';
 import 'package:yolk_a_day/authentication/validators/validator.dart';
 
-class Register extends StatefulWidget {
+class Register extends StatelessWidget {
   const Register({super.key});
-
-  @override
-  State<Register> createState() => _RegisterState();
-}
-
-class _RegisterState extends State<Register> {
 
   @override
   Widget build(BuildContext context) {
@@ -123,62 +118,76 @@ class _RegisterState extends State<Register> {
                     ),
 
                     // password
-                    TextFormField(
-                      controller: controller.password,
-                      decoration: const InputDecoration(
-                          focusedBorder: OutlineInputBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(5)),
-                              borderSide: BorderSide(
-                                  color: Color.fromARGB(255, 248, 192, 56),
-                                  width: 3,
-                                  style: BorderStyle.solid)),
-                          enabledBorder: OutlineInputBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(5)),
-                              borderSide: BorderSide(
-                                  color: Color.fromARGB(255, 248, 192, 56),
-                                  width: 3,
-                                  style: BorderStyle.solid)),
-                          labelText: 'Password',
-                          labelStyle: TextStyle(
-                              color: Colors.black,
-                              fontSize: 15,
-                              fontFamily: 'Outfit',
-                              fontWeight: FontWeight.normal)),
-                      style: const TextStyle(),
-                      validator: (value) => FormValidator.validatePassword(value),
+                    Obx(
+                      () => TextFormField(
+                        controller: controller.password,
+                        obscureText: controller.hidePassword.value,
+                        decoration: InputDecoration(
+                            focusedBorder: const OutlineInputBorder(
+                                borderRadius:
+                                BorderRadius.all(Radius.circular(5)),
+                                borderSide: BorderSide(
+                                    color: Color.fromARGB(255, 248, 192, 56),
+                                    width: 3,
+                                    style: BorderStyle.solid)),
+                            enabledBorder: const OutlineInputBorder(
+                                borderRadius:
+                                BorderRadius.all(Radius.circular(5)),
+                                borderSide: BorderSide(
+                                    color: Color.fromARGB(255, 248, 192, 56),
+                                    width: 3,
+                                    style: BorderStyle.solid)),
+                            suffixIcon: IconButton(
+                                onPressed: () => controller.hidePassword.value = !controller.hidePassword.value,
+                                icon: Icon(controller.hidePassword.value ? Iconsax.eye_slash : Iconsax.eye),
+                            ),
+                            labelText: 'Password',
+                            labelStyle: const TextStyle(
+                                color: Colors.black,
+                                fontSize: 15,
+                                fontFamily: 'Outfit',
+                                fontWeight: FontWeight.normal)),
+                        style: const TextStyle(),
+                        validator: (value) => FormValidator.validatePassword(value),
+                      ),
                     ),
                     const SizedBox(
                       height: 15,
                     ),
 
                     // confirm password
-                    TextFormField(
-                      controller: controller.confirmPassword,
-                      decoration: const InputDecoration(
-                          focusedBorder: OutlineInputBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(5)),
-                              borderSide: BorderSide(
-                                  color: Color.fromARGB(255, 248, 192, 56),
-                                  width: 3,
-                                  style: BorderStyle.solid)),
-                          enabledBorder: OutlineInputBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(5)),
-                              borderSide: BorderSide(
-                                  color: Color.fromARGB(255, 248, 192, 56),
-                                  width: 3,
-                                  style: BorderStyle.solid)),
-                          labelText: 'Confirm Password',
-                          labelStyle: TextStyle(
-                              color: Colors.black,
-                              fontSize: 15,
-                              fontFamily: 'Outfit',
-                              fontWeight: FontWeight.normal)),
-                      style: const TextStyle(),
-                      validator: (value) => FormValidator.validateConfirmPassword(controller.password.text, controller.confirmPassword.text),
+                    Obx(
+                      () => TextFormField(
+                        controller: controller.confirmPassword,
+                        obscureText: controller.hideConfirmPassword.value,
+                        decoration: InputDecoration(
+                            focusedBorder: const OutlineInputBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(5)),
+                                borderSide: BorderSide(
+                                    color: Color.fromARGB(255, 248, 192, 56),
+                                    width: 3,
+                                    style: BorderStyle.solid)),
+                            enabledBorder: const OutlineInputBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(5)),
+                                borderSide: BorderSide(
+                                    color: Color.fromARGB(255, 248, 192, 56),
+                                    width: 3,
+                                    style: BorderStyle.solid)),
+                            suffixIcon: IconButton(
+                              onPressed: () => controller.hideConfirmPassword.value = !controller.hideConfirmPassword.value,
+                              icon: Icon(controller.hideConfirmPassword.value ? Iconsax.eye_slash : Iconsax.eye),
+                            ),
+                            labelText: 'Confirm Password',
+                            labelStyle: const TextStyle(
+                                color: Colors.black,
+                                fontSize: 15,
+                                fontFamily: 'Outfit',
+                                fontWeight: FontWeight.normal)),
+                        style: const TextStyle(),
+                        validator: (value) => FormValidator.validateConfirmPassword(controller.password.text, controller.confirmPassword.text),
+                      ),
                     ),
                     const SizedBox(
                       height: 47,
