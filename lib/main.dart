@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yolk_a_day/screen/home.dart';
 import 'package:yolk_a_day/screen/login.dart';
 import 'package:yolk_a_day/screen/register.dart';
 import 'package:yolk_a_day/screen/welcome.dart';
@@ -32,11 +33,12 @@ void main() {
   // TODO: make run app works on async main function
   runApp(MaterialApp(
     title: 'Yolk A Day',
-    initialRoute: '/',
+    initialRoute: '/home',
     routes: {
       '/': (context) => const Welcome(),
       '/register': (context) => const Register(),
-      '/login': (context) => const Login()
+      '/login': (context) => const Login(),
+      '/home': (context) => const Home(),
     },
   ));
 }
