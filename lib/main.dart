@@ -1,42 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:yolk_a_day/screen/login.dart';
-import 'package:yolk_a_day/screen/register.dart';
-import 'package:yolk_a_day/screen/welcome.dart';
+import 'package:get_storage/get_storage.dart';
+import 'package:get/get.dart';
 
-// Future<void> main() async{
-//   // TODO: widgets binding
-//   // final WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+import 'app.dart';
 
-//   // TODO: add GetX local storage
-//   // await GetStorage.init();
+void main() async {
 
-//   //TODO: await native splash
-//   // FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+  // TODO: widgets binding
+  // final WidgetsBinding widgetsBinding =
+  WidgetsFlutterBinding.ensureInitialized();
 
-//   // TODO: initialize firebase & authentication
-//   // await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform)
-//   //     .then((FirebaseApp value) => Get.put(AuthenticationRepository())
-//   // );
+  // TODO: add GetX local storage
+  // await GetStorage.init();
 
-//   runApp(MaterialApp(
-//     title: 'Yolk A Day',
-//     initialRoute: '/',
-//     routes: {
-//       '/': (context) => const Welcome(),
-//       '/register': (context) => const Register()
-//     },
-//   ));
-// }
+  //TODO: await native splash
+  // FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
 
-void main() {
-  // TODO: make run app works on async main function
-  runApp(MaterialApp(
-    title: 'Yolk A Day',
-    initialRoute: '/',
-    routes: {
-      '/': (context) => const Welcome(),
-      '/register': (context) => const Register(),
-      '/login': (context) => const Login()
-    },
-  ));
+  // TODO: initialize firebase & authentication
+  // await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform)
+  //     .then((FirebaseApp value) => Get.put(AuthenticationRepository())
+  // );
+
+  runApp(const App());
 }
