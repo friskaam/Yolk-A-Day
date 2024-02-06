@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:yolk_a_day/authentication/screen/login.dart';
+import 'package:yolk_a_day/authentication/screen/register.dart';
 
 class Welcome extends StatelessWidget {
   const Welcome({super.key});
@@ -13,8 +16,8 @@ class Welcome extends StatelessWidget {
             Container(
                 width: double.infinity,
                 height: 276,
-                padding: EdgeInsets.only(bottom: 40),
-                child: Align(
+                padding: const EdgeInsets.only(bottom: 40),
+                child: const Align(
                     alignment: Alignment.bottomRight,
                     child: SizedBox(
                       width: 244,
@@ -41,7 +44,7 @@ class Welcome extends StatelessWidget {
                     child: Container(
                       width: double.infinity,
                       height: double.infinity,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                           borderRadius: BorderRadius.only(
                               topLeft: Radius.circular(300),
                               topRight: Radius.circular(300)),
@@ -57,33 +60,31 @@ class Welcome extends StatelessWidget {
                           children: [
                             TextButton(
                               style: TextButton.styleFrom(
-                                  minimumSize: Size(double.infinity, 38),
+                                  minimumSize: const Size(double.infinity, 38),
                                   foregroundColor:
-                                      Color.fromARGB(255, 248, 192, 56),
+                                  const Color.fromARGB(255, 248, 192, 56),
                                   backgroundColor: Colors.white),
-                              onPressed: () {
-                                Navigator.pushNamed(context, '/login');
-                              },
-                              child: Text('Log In'),
+                              onPressed: () => Get.to(() => const Login()),
+                              child: const Text('Log In'),
                             ),
                             OutlinedButton(
                               style: OutlinedButton.styleFrom(
-                                  minimumSize: Size(double.infinity, 38),
+                                  minimumSize: const Size(double.infinity, 38),
                                   side:
-                                      BorderSide(color: Colors.white, width: 3),
+                                  const BorderSide(color: Colors.white, width: 3),
                                   foregroundColor: Colors.white),
-                              onPressed: () {
-                                Navigator.pushNamed(context, '/register');
-                              },
-                              child: Text('Register'),
+                              onPressed: () => Get.to(() => const Register()),
+                              child: const Text('Register'),
                             )
                           ],
                         ),
-                      ))
+                      )
+                  )
                 ],
               ),
             )
           ],
-        ));
+        )
+    );
   }
 }
