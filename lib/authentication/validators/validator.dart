@@ -7,7 +7,17 @@ class FormValidator {
   }
 
   static String? validateUsername(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Username is required';
+    }
 
+    if (value.length < 5) {
+      return 'Username must be at least 5 characters long.';
+    }
+
+    if (!RegExp(r'^\w+$').hasMatch(value)) {
+      return 'Username can only contain letters, numbers, and underscores.';
+    }
     return null;
   }
 
@@ -33,21 +43,29 @@ class FormValidator {
       return 'Password must be at least 8 characters long.';
     }
 
-    if (!value.contains(RegExp(r'[A-Z]'))) {
+    if (!RegExp(r'[A-Z]').hasMatch(value)) {
       return 'Password must contain at least one uppercase letter.';
     }
 
-    if (!value.contains(RegExp(r'[0-9]'))) {
+    if (!RegExp(r'[a-z]').hasMatch(value)) {
+      return 'Password must contain at least one lowercase letter.';
+    }
+
+    if (!RegExp(r'[0-9]').hasMatch(value)) {
       return 'Password must contain at least one number.';
     }
 
-    if (!value.contains(RegExp(r'[!@#$%^&*(),.?":{}|<>]'))) {
-      return 'Password must contain at least special character.';
+    if (!RegExp(r'[!@#$%^&*(),.?":{}|<>]').hasMatch(value)) {
+      return 'Password must contain at least one special character.';
     }
     return null;
   }
 
   static String? validateConfirmPassword(String? originalPassword, String? confirmPassword) {
+    if (confirmPassword == null || confirmPassword.isEmpty) {
+      return 'Password is required.';
+    }
+
     if (confirmPassword != originalPassword) {
       return 'Passwords do not match.';
     }

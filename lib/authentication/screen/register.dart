@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-//import 'package:yolk_a_day/authentication/controllers/register_controller.dart';
+import 'package:yolk_a_day/authentication/controllers/register_controller.dart';
 import 'package:yolk_a_day/authentication/validators/validator.dart';
 
 class Register extends StatefulWidget {
@@ -13,7 +13,7 @@ class Register extends StatefulWidget {
 class _RegisterState extends State<Register> {
   @override
   Widget build(BuildContext context) {
-    //final controller = Get.put(RegisterController());
+    final controller = Get.put(RegisterController());
     return Scaffold(
         body: SingleChildScrollView(
       child: Padding(
@@ -55,139 +55,152 @@ class _RegisterState extends State<Register> {
               height: 29,
             ),
             Form(
-                //key: controller.registerFormKey,
+                key: controller.registerFormKey,
                 child: Column(
-              children: [
-                // username
-                TextFormField(
-                  //controller: controller.username,
-                  decoration: const InputDecoration(
-                      focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(5)),
-                          borderSide: BorderSide(
-                              color: Color.fromARGB(255, 248, 192, 56),
-                              width: 3,
-                              style: BorderStyle.solid)),
-                      enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(5)),
-                          borderSide: BorderSide(
-                              color: Color.fromARGB(255, 248, 192, 56),
-                              width: 3,
-                              style: BorderStyle.solid)),
-                      labelText: 'Username',
-                      labelStyle: TextStyle(
-                          color: Colors.black,
-                          fontSize: 15,
-                          fontFamily: 'Outfit',
-                          fontWeight: FontWeight.normal)),
-                  style: const TextStyle(),
-                  validator: (value) => FormValidator.validateUsername(value),
-                ),
-                const SizedBox(
-                  height: 15,
-                ),
+                  children: [
+                    // username
+                    TextFormField(
+                      controller: controller.username,
+                      decoration: const InputDecoration(
+                          focusedBorder: OutlineInputBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(5)),
+                              borderSide: BorderSide(
+                                  color: Color.fromARGB(255, 248, 192, 56),
+                                  width: 3,
+                                  style: BorderStyle.solid)),
+                          enabledBorder: OutlineInputBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(5)),
+                              borderSide: BorderSide(
+                                  color: Color.fromARGB(255, 248, 192, 56),
+                                  width: 3,
+                                  style: BorderStyle.solid)),
+                          labelText: 'Username',
+                          labelStyle: TextStyle(
+                              color: Colors.black,
+                              fontSize: 15,
+                              fontFamily: 'Outfit',
+                              fontWeight: FontWeight.normal)),
+                      style: const TextStyle(),
+                      validator: (value) =>
+                          FormValidator.validateUsername(value),
+                    ),
+                    const SizedBox(
+                      height: 15,
+                    ),
 
-                // email
-                TextFormField(
-                  //controller: controller.email,
-                  decoration: const InputDecoration(
-                      focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(5)),
-                          borderSide: BorderSide(
-                              color: Color.fromARGB(255, 248, 192, 56),
-                              width: 3,
-                              style: BorderStyle.solid)),
-                      enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(5)),
-                          borderSide: BorderSide(
-                              color: Color.fromARGB(255, 248, 192, 56),
-                              width: 3,
-                              style: BorderStyle.solid)),
-                      labelText: 'Email',
-                      labelStyle: TextStyle(
-                          color: Colors.black,
-                          fontSize: 15,
-                          fontFamily: 'Outfit',
-                          fontWeight: FontWeight.normal)),
-                  style: const TextStyle(),
-                  validator: (value) => FormValidator.validateEmail(value),
-                ),
-                const SizedBox(
-                  height: 15,
-                ),
+                    // email
+                    TextFormField(
+                      controller: controller.email,
+                      decoration: const InputDecoration(
+                          focusedBorder: OutlineInputBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(5)),
+                              borderSide: BorderSide(
+                                  color: Color.fromARGB(255, 248, 192, 56),
+                                  width: 3,
+                                  style: BorderStyle.solid)),
+                          enabledBorder: OutlineInputBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(5)),
+                              borderSide: BorderSide(
+                                  color: Color.fromARGB(255, 248, 192, 56),
+                                  width: 3,
+                                  style: BorderStyle.solid)),
+                          labelText: 'Email',
+                          labelStyle: TextStyle(
+                              color: Colors.black,
+                              fontSize: 15,
+                              fontFamily: 'Outfit',
+                              fontWeight: FontWeight.normal)),
+                      style: const TextStyle(),
+                      validator: (value) => FormValidator.validateEmail(value),
+                    ),
+                    const SizedBox(
+                      height: 15,
+                    ),
 
-                // password
-                TextFormField(
-                  //controller: controller.password,
-                  decoration: const InputDecoration(
-                      focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(5)),
-                          borderSide: BorderSide(
-                              color: Color.fromARGB(255, 248, 192, 56),
-                              width: 3,
-                              style: BorderStyle.solid)),
-                      enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(5)),
-                          borderSide: BorderSide(
-                              color: Color.fromARGB(255, 248, 192, 56),
-                              width: 3,
-                              style: BorderStyle.solid)),
-                      labelText: 'Password',
-                      labelStyle: TextStyle(
-                          color: Colors.black,
-                          fontSize: 15,
-                          fontFamily: 'Outfit',
-                          fontWeight: FontWeight.normal)),
-                  style: const TextStyle(),
-                  validator: (value) => FormValidator.validatePassword(value),
-                ),
-                const SizedBox(
-                  height: 15,
-                ),
+                    // password
+                    TextFormField(
+                      controller: controller.password,
+                      decoration: const InputDecoration(
+                          focusedBorder: OutlineInputBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(5)),
+                              borderSide: BorderSide(
+                                  color: Color.fromARGB(255, 248, 192, 56),
+                                  width: 3,
+                                  style: BorderStyle.solid)),
+                          enabledBorder: OutlineInputBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(5)),
+                              borderSide: BorderSide(
+                                  color: Color.fromARGB(255, 248, 192, 56),
+                                  width: 3,
+                                  style: BorderStyle.solid)),
+                          labelText: 'Password',
+                          labelStyle: TextStyle(
+                              color: Colors.black,
+                              fontSize: 15,
+                              fontFamily: 'Outfit',
+                              fontWeight: FontWeight.normal)),
+                      style: const TextStyle(),
+                      validator: (value) =>
+                          FormValidator.validatePassword(value),
+                    ),
+                    const SizedBox(
+                      height: 15,
+                    ),
 
-                // confirm password
-                TextFormField(
-                  //controller: controller.confirmPassword,
-                  decoration: const InputDecoration(
-                      focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(5)),
-                          borderSide: BorderSide(
-                              color: Color.fromARGB(255, 248, 192, 56),
-                              width: 3,
-                              style: BorderStyle.solid)),
-                      enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(5)),
-                          borderSide: BorderSide(
-                              color: Color.fromARGB(255, 248, 192, 56),
-                              width: 3,
-                              style: BorderStyle.solid)),
-                      labelText: 'Confirm Password',
-                      labelStyle: TextStyle(
-                          color: Colors.black,
-                          fontSize: 15,
-                          fontFamily: 'Outfit',
-                          fontWeight: FontWeight.normal)),
-                  style: const TextStyle(),
-                  //validator: (value) => FormValidator.validateConfirmPassword(controller.password.text, controller.confirmPassword.text),
-                ),
-                const SizedBox(
-                  height: 47,
-                ),
+                    // confirm password
+                    TextFormField(
+                      controller: controller.confirmPassword,
+                      decoration: const InputDecoration(
+                          focusedBorder: OutlineInputBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(5)),
+                              borderSide: BorderSide(
+                                  color: Color.fromARGB(255, 248, 192, 56),
+                                  width: 3,
+                                  style: BorderStyle.solid)),
+                          enabledBorder: OutlineInputBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(5)),
+                              borderSide: BorderSide(
+                                  color: Color.fromARGB(255, 248, 192, 56),
+                                  width: 3,
+                                  style: BorderStyle.solid)),
+                          labelText: 'Confirm Password',
+                          labelStyle: TextStyle(
+                              color: Colors.black,
+                              fontSize: 15,
+                              fontFamily: 'Outfit',
+                              fontWeight: FontWeight.normal)),
+                      style: const TextStyle(),
+                      validator: (value) =>
+                          FormValidator.validateConfirmPassword(
+                              controller.password.text,
+                              controller.confirmPassword.text),
+                    ),
+                    const SizedBox(
+                      height: 47,
+                    ),
 
-                // register button
-                SizedBox(
-                  width: double.infinity,
-                  child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor:
-                              const Color.fromARGB(255, 248, 192, 56)),
-                      onPressed: () => {
-                            //controller.register()
-                          },
-                      child: const Text('Register')),
-                )
-              ],
-            ))
+                    // register button
+                    SizedBox(
+                      width: double.infinity,
+                      child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor:
+                                  const Color.fromARGB(255, 248, 192, 56)),
+                          onPressed: () => {
+                                //controller.register()
+                              },
+                          child: const Text('Register')),
+                    )
+                  ],
+                ))
           ],
         ),
       ),

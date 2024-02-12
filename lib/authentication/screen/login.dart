@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:yolk_a_day/authentication/controllers/login_controller.dart';
 //import 'package:yolk_a_day/authentication/controllers/register_controller.dart';
 
 import '../../component/navigation_menu.dart';
@@ -14,7 +15,7 @@ class Login extends StatefulWidget {
 class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
-    //final controller = ;
+    final controller = Get.put(LoginController());
     return Scaffold(
         body: SingleChildScrollView(
       child: Padding(
@@ -56,74 +57,78 @@ class _LoginState extends State<Login> {
               height: 149,
             ),
             Form(
-                //key: ,
+                key: controller.loginFormKey,
                 child: Column(
-              children: [
-                TextFormField(
-                  //controller: controller.emailUsername,
-                  decoration: const InputDecoration(
-                      focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(5)),
-                          borderSide: BorderSide(
-                              color: Color.fromARGB(255, 248, 192, 56),
-                              width: 3,
-                              style: BorderStyle.solid)),
-                      enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(5)),
-                          borderSide: BorderSide(
-                              color: Color.fromARGB(255, 248, 192, 56),
-                              width: 3,
-                              style: BorderStyle.solid)),
-                      labelText: 'Username/Email',
-                      labelStyle: TextStyle(
-                          color: Colors.black,
-                          fontSize: 15,
-                          fontFamily: 'Outfit',
-                          fontWeight: FontWeight.normal)),
-                  style: const TextStyle(),
-                  //validator: ,
-                ),
-                const SizedBox(
-                  height: 15,
-                ),
-                TextFormField(
-                  //controller: ,
-                  decoration: const InputDecoration(
-                      focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(5)),
-                          borderSide: BorderSide(
-                              color: Color.fromARGB(255, 248, 192, 56),
-                              width: 3,
-                              style: BorderStyle.solid)),
-                      enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(5)),
-                          borderSide: BorderSide(
-                              color: Color.fromARGB(255, 248, 192, 56),
-                              width: 3,
-                              style: BorderStyle.solid)),
-                      labelText: 'Password',
-                      labelStyle: TextStyle(
-                          color: Colors.black,
-                          fontSize: 15,
-                          fontFamily: 'Outfit',
-                          fontWeight: FontWeight.normal)),
-                  style: const TextStyle(),
-                  //validator: ,
-                ),
-                const SizedBox(
-                  height: 47,
-                ),
-                SizedBox(
-                  width: double.infinity,
-                  child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor:
-                              const Color.fromARGB(255, 248, 192, 56)),
-                      onPressed: () => Get.to(() => const NavigationMenu()),
-                      child: const Text('Log In')),
-                )
-              ],
-            ))
+                  children: [
+                    TextFormField(
+                      controller: controller.emailUsername,
+                      decoration: const InputDecoration(
+                          focusedBorder: OutlineInputBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(5)),
+                              borderSide: BorderSide(
+                                  color: Color.fromARGB(255, 248, 192, 56),
+                                  width: 3,
+                                  style: BorderStyle.solid)),
+                          enabledBorder: OutlineInputBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(5)),
+                              borderSide: BorderSide(
+                                  color: Color.fromARGB(255, 248, 192, 56),
+                                  width: 3,
+                                  style: BorderStyle.solid)),
+                          labelText: 'Username/Email',
+                          labelStyle: TextStyle(
+                              color: Colors.black,
+                              fontSize: 15,
+                              fontFamily: 'Outfit',
+                              fontWeight: FontWeight.normal)),
+                      style: const TextStyle(),
+                      //validator: ,
+                    ),
+                    const SizedBox(
+                      height: 15,
+                    ),
+                    TextFormField(
+                      controller: controller.password,
+                      decoration: const InputDecoration(
+                          focusedBorder: OutlineInputBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(5)),
+                              borderSide: BorderSide(
+                                  color: Color.fromARGB(255, 248, 192, 56),
+                                  width: 3,
+                                  style: BorderStyle.solid)),
+                          enabledBorder: OutlineInputBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(5)),
+                              borderSide: BorderSide(
+                                  color: Color.fromARGB(255, 248, 192, 56),
+                                  width: 3,
+                                  style: BorderStyle.solid)),
+                          labelText: 'Password',
+                          labelStyle: TextStyle(
+                              color: Colors.black,
+                              fontSize: 15,
+                              fontFamily: 'Outfit',
+                              fontWeight: FontWeight.normal)),
+                      style: const TextStyle(),
+                      //validator: ,
+                    ),
+                    const SizedBox(
+                      height: 47,
+                    ),
+                    SizedBox(
+                      width: double.infinity,
+                      child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor:
+                                  const Color.fromARGB(255, 248, 192, 56)),
+                          onPressed: () => Get.to(() => const NavigationMenu()),
+                          child: const Text('Log In')),
+                    )
+                  ],
+                ))
           ],
         ),
       ),

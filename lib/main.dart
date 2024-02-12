@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:get_storage/get_storage.dart';
-import 'package:get/get.dart';
 
 import 'app.dart';
 
-void main() async {
+Future<void> main() async {
   // TODO: widgets binding
-  // final WidgetsBinding widgetsBinding =
-  WidgetsFlutterBinding.ensureInitialized();
+  final WidgetsBinding widgetsBinding =
+      WidgetsFlutterBinding.ensureInitialized();
 
   // TODO: add GetX local storage
   // await GetStorage.init();
