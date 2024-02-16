@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:yolk_a_day/authentication/screen/challange.dart';
 import 'package:yolk_a_day/authentication/screen/home.dart';
+import 'package:yolk_a_day/authentication/screen/statistic/statistic.dart';
 
 class NavigationMenu extends StatelessWidget {
   const NavigationMenu({super.key});
@@ -31,7 +32,8 @@ class NavigationMenu extends StatelessWidget {
               child: NavigationBar(
                 indicatorColor: Colors.transparent,
                 backgroundColor: Colors.transparent,
-                elevation: 0,
+                shadowColor: Colors.transparent,
+                surfaceTintColor: Colors.transparent,
                 selectedIndex: controller.selectedIndex.value,
                 onDestinationSelected: (index) =>
                     controller.selectedIndex.value = index,
@@ -51,12 +53,12 @@ class NavigationMenu extends StatelessWidget {
                   ),
                   NavigationDestination(
                     selectedIcon: SvgPicture.asset(
-                      'assets/navigation-icons/challange-active.svg',
+                      'assets/navigation-icons/challenge-active.svg',
                       height: 40,
                       width: 40,
                     ),
                     icon: SvgPicture.asset(
-                      'assets/navigation-icons/challange.svg',
+                      'assets/navigation-icons/challenge.svg',
                       height: 40,
                       width: 40,
                     ),
@@ -116,8 +118,7 @@ class NavigationController extends GetxController {
   final screens = [
     Home(), // replace the container with home screen
     Challange(), // replace the container with challenge screen
-    Container(
-        color: Colors.green), // replace the container with statistics screen
+    Statistic(), // replace the container with statistics screen
     Container(color: Colors.yellow), // replace the container with social screen
     Container(
         color: Colors.orange), // replace the container with profile screen

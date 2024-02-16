@@ -43,7 +43,6 @@ class _ChallangeState extends State<Challange> {
             height: 44,
           ),
           Container(
-            padding: EdgeInsetsDirectional.symmetric(vertical: 10),
             width: double.infinity,
             height: 79,
             decoration: BoxDecoration(
@@ -58,7 +57,7 @@ class _ChallangeState extends State<Challange> {
                       blurRadius: 10)
                 ]),
             child: ElevatedButton(
-              onPressed: () => {Get.to(DailyChallange())},
+              onPressed: () => {Get.to(() => DailyChallange())},
               style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.transparent,
                   shadowColor: Colors.transparent,
@@ -67,11 +66,20 @@ class _ChallangeState extends State<Challange> {
                   Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
                 SvgPicture.asset(
                   'assets/daily-challange.svg',
-                  width: 113,
+                  width: 65,
                 ),
-                Text(
-                  "Daily Challange",
-                  style: TextStyle(fontWeight: FontWeight.w600, fontSize: 18),
+                SizedBox(
+                  width: 10,
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(5.0),
+                  child: Text(
+                    "Daily Challange",
+                    style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 18,
+                        color: Color.fromARGB(255, 75, 75, 75)),
+                  ),
                 )
               ]),
             ),
@@ -80,7 +88,6 @@ class _ChallangeState extends State<Challange> {
             height: 33,
           ),
           Container(
-            padding: EdgeInsetsDirectional.symmetric(vertical: 10),
             width: double.infinity,
             height: 79,
             decoration: BoxDecoration(
@@ -103,12 +110,18 @@ class _ChallangeState extends State<Challange> {
               child:
                   Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
                 SvgPicture.asset(
-                  'assets/special-challange.svg',
-                  width: 113,
+                  'assets/challenge-special.svg',
+                  width: 70,
+                ),
+                SizedBox(
+                  width: 10,
                 ),
                 Text(
                   "Special Challange",
-                  style: TextStyle(fontWeight: FontWeight.w600, fontSize: 18),
+                  style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 18,
+                      color: Color.fromARGB(255, 75, 75, 75)),
                 )
               ]),
             ),

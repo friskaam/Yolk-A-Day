@@ -60,10 +60,13 @@ class _HomeState extends State<Home> {
                       color: Color.fromRGBO(221, 221, 221, 0.50),
                       blurRadius: 10)
                 ]),
-            child: Row(children: [
+            child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
               SvgPicture.asset(
                 'assets/daily-challange.svg',
-                width: 113,
+                width: 65,
+              ),
+              SizedBox(
+                width: 10,
               ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -71,12 +74,18 @@ class _HomeState extends State<Home> {
                 children: [
                   Text(
                     'Daily Challange',
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                    style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w600,
+                        color: Color.fromARGB(255, 75, 75, 75)),
+                  ),
+                  SizedBox(
+                    height: 10,
                   ),
                   Container(
                     width: 190,
                     height: 15,
-                    color: Colors.black,
+                    color: Color.fromRGBO(166, 166, 166, 100),
                   )
                 ],
               )
@@ -106,13 +115,19 @@ class _HomeState extends State<Home> {
                   foregroundColor: Colors.black),
               onPressed: () => {Get.to(UploadManual())},
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SvgPicture.asset(
                     'assets/upload.svg',
-                    width: 74,
-                    height: 65,
+                    width: 75,
                   ),
-                  Text('Upload')
+                  Text(
+                    'Upload',
+                    style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w600,
+                        color: Color.fromARGB(255, 75, 75, 75)),
+                  )
                 ],
               ),
             ),
