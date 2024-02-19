@@ -19,7 +19,7 @@ publish_to: "none" # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.0.6 <5.0.0'
+  sdk: ">=3.0.6 <5.0.0"
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -37,17 +37,30 @@ dependencies:
   firebase_core: ^2.24.2
   firebase_auth: ^4.10.0
   cloud_firestore: ^4.10.0
+  google_sign_in: ^6.1.0
   get: ^4.6.5
   get_storage: ^2.1.1
   http: ^1.1.0
   intl: ^0.18.1
   iconsax: ^0.0.8
   connectivity_plus: ^5.0.2
+  flutter_native_splash: ^2.3.7
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
+
+flutter_native_splash:
+  color: "#FFFFFF"
+  color_dark: "#272727"
+  image: assets\logo\roundedLogo.png
+  image_dark: assets\logo\roundedLogo.png
+  android_12:
+    color: "#FFFFFF"
+    color_dark: "#272727"
+    image: assets\logo\roundedLogo.png
+    image_dark: assets\logo\roundedLogo.png
 
 # The following section is specific to Flutter packages.
 flutter:
