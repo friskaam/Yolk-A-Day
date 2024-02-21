@@ -27,10 +27,12 @@ class Register extends StatelessWidget {
                       width: double.infinity,
                       height: double.infinity,
                       decoration: const BoxDecoration(
-                          borderRadius: BorderRadius.only(
-                              bottomLeft: Radius.circular(300),
-                              bottomRight: Radius.circular(300)),
-                          color: Color.fromARGB(255, 248, 192, 56)),
+                        borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(300),
+                          bottomRight: Radius.circular(300),
+                        ),
+                        color: Color.fromARGB(255, 248, 192, 56),
+                      ),
                     ),
                   ),
                   const Positioned(
@@ -38,12 +40,13 @@ class Register extends StatelessWidget {
                     child: Text(
                       "One step closer",
                       style: TextStyle(
-                          color: Colors.white,
-                          fontFamily: 'Outfit',
-                          fontSize: 24,
-                          fontWeight: FontWeight.w600),
+                        color: Colors.white,
+                        fontFamily: 'Outfit',
+                        fontSize: 24,
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
@@ -54,33 +57,39 @@ class Register extends StatelessWidget {
                 key: controller.registerFormKey,
                 child: Column(
                   children: [
-
                     // username
                     TextFormField(
                       controller: controller.username,
                       decoration: const InputDecoration(
-                          focusedBorder: OutlineInputBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(5)),
-                              borderSide: BorderSide(
-                                  color: Color.fromARGB(255, 248, 192, 56),
-                                  width: 3,
-                                  style: BorderStyle.solid)),
-                          enabledBorder: OutlineInputBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(5)),
-                              borderSide: BorderSide(
-                                  color: Color.fromARGB(255, 248, 192, 56),
-                                  width: 3,
-                                  style: BorderStyle.solid)),
-                          labelText: 'Username',
-                          labelStyle: TextStyle(
-                              color: Colors.black,
-                              fontSize: 15,
-                              fontFamily: 'Outfit',
-                              fontWeight: FontWeight.normal)),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(5)),
+                          borderSide: BorderSide(
+                            color: Color.fromARGB(255, 248, 192, 56),
+                            width: 3,
+                            style: BorderStyle.solid,
+                          ),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(5),
+                          ),
+                          borderSide: BorderSide(
+                            color: Color.fromARGB(255, 248, 192, 56),
+                            width: 3,
+                            style: BorderStyle.solid,
+                          ),
+                        ),
+                        labelText: 'Username',
+                        labelStyle: TextStyle(
+                          color: Colors.black,
+                          fontSize: 15,
+                          fontFamily: 'Outfit',
+                          fontWeight: FontWeight.normal,
+                        ),
+                      ),
                       style: const TextStyle(),
-                      validator: (value) => FormValidator.validateUsername(value),
+                      validator: (value) =>
+                          FormValidator.validateUsername(value),
                     ),
                     const SizedBox(
                       height: 15,
@@ -90,26 +99,32 @@ class Register extends StatelessWidget {
                     TextFormField(
                       controller: controller.email,
                       decoration: const InputDecoration(
-                          focusedBorder: OutlineInputBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(5)),
-                              borderSide: BorderSide(
-                                  color: Color.fromARGB(255, 248, 192, 56),
-                                  width: 3,
-                                  style: BorderStyle.solid)),
-                          enabledBorder: OutlineInputBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(5)),
-                              borderSide: BorderSide(
-                                  color: Color.fromARGB(255, 248, 192, 56),
-                                  width: 3,
-                                  style: BorderStyle.solid)),
-                          labelText: 'Email',
-                          labelStyle: TextStyle(
-                              color: Colors.black,
-                              fontSize: 15,
-                              fontFamily: 'Outfit',
-                              fontWeight: FontWeight.normal)),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(5),
+                          ),
+                          borderSide: BorderSide(
+                            color: Color.fromARGB(255, 248, 192, 56),
+                            width: 3,
+                            style: BorderStyle.solid,
+                          ),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(5)),
+                          borderSide: BorderSide(
+                            color: Color.fromARGB(255, 248, 192, 56),
+                            width: 3,
+                            style: BorderStyle.solid,
+                          ),
+                        ),
+                        labelText: 'Email',
+                        labelStyle: TextStyle(
+                          color: Colors.black,
+                          fontSize: 15,
+                          fontFamily: 'Outfit',
+                          fontWeight: FontWeight.normal,
+                        ),
+                      ),
                       style: const TextStyle(),
                       validator: (value) => FormValidator.validateEmail(value),
                     ),
@@ -123,32 +138,37 @@ class Register extends StatelessWidget {
                         controller: controller.password,
                         obscureText: controller.hidePassword.value,
                         decoration: InputDecoration(
-                            focusedBorder: const OutlineInputBorder(
-                                borderRadius:
-                                BorderRadius.all(Radius.circular(5)),
-                                borderSide: BorderSide(
-                                    color: Color.fromARGB(255, 248, 192, 56),
-                                    width: 3,
-                                    style: BorderStyle.solid)),
-                            enabledBorder: const OutlineInputBorder(
-                                borderRadius:
-                                BorderRadius.all(Radius.circular(5)),
-                                borderSide: BorderSide(
-                                    color: Color.fromARGB(255, 248, 192, 56),
-                                    width: 3,
-                                    style: BorderStyle.solid)),
-                            suffixIcon: IconButton(
-                                onPressed: () => controller.hidePassword.value = !controller.hidePassword.value,
-                                icon: Icon(controller.hidePassword.value ? Iconsax.eye_slash : Iconsax.eye),
-                            ),
-                            labelText: 'Password',
-                            labelStyle: const TextStyle(
-                                color: Colors.black,
-                                fontSize: 15,
-                                fontFamily: 'Outfit',
-                                fontWeight: FontWeight.normal)),
+                          focusedBorder: const OutlineInputBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(5)),
+                              borderSide: BorderSide(
+                                  color: Color.fromARGB(255, 248, 192, 56),
+                                  width: 3,
+                                  style: BorderStyle.solid)),
+                          enabledBorder: const OutlineInputBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(5)),
+                              borderSide: BorderSide(
+                                  color: Color.fromARGB(255, 248, 192, 56),
+                                  width: 3,
+                                  style: BorderStyle.solid)),
+                          suffixIcon: IconButton(
+                            onPressed: () => controller.hidePassword.value =
+                                !controller.hidePassword.value,
+                            icon: Icon(controller.hidePassword.value
+                                ? Iconsax.eye_slash
+                                : Iconsax.eye),
+                          ),
+                          labelText: 'Password',
+                          labelStyle: const TextStyle(
+                              color: Colors.black,
+                              fontSize: 15,
+                              fontFamily: 'Outfit',
+                              fontWeight: FontWeight.normal),
+                        ),
                         style: const TextStyle(),
-                        validator: (value) => FormValidator.validatePassword(value),
+                        validator: (value) =>
+                            FormValidator.validatePassword(value),
                       ),
                     ),
                     const SizedBox(
@@ -176,8 +196,12 @@ class Register extends StatelessWidget {
                                     width: 3,
                                     style: BorderStyle.solid)),
                             suffixIcon: IconButton(
-                              onPressed: () => controller.hideConfirmPassword.value = !controller.hideConfirmPassword.value,
-                              icon: Icon(controller.hideConfirmPassword.value ? Iconsax.eye_slash : Iconsax.eye),
+                              onPressed: () =>
+                                  controller.hideConfirmPassword.value =
+                                      !controller.hideConfirmPassword.value,
+                              icon: Icon(controller.hideConfirmPassword.value
+                                  ? Iconsax.eye_slash
+                                  : Iconsax.eye),
                             ),
                             labelText: 'Confirm Password',
                             labelStyle: const TextStyle(
@@ -186,7 +210,10 @@ class Register extends StatelessWidget {
                                 fontFamily: 'Outfit',
                                 fontWeight: FontWeight.normal)),
                         style: const TextStyle(),
-                        validator: (value) => FormValidator.validateConfirmPassword(controller.password.text, controller.confirmPassword.text),
+                        validator: (value) =>
+                            FormValidator.validateConfirmPassword(
+                                controller.password.text,
+                                controller.confirmPassword.text),
                       ),
                     ),
                     const SizedBox(
@@ -204,8 +231,7 @@ class Register extends StatelessWidget {
                           child: const Text('Register')),
                     )
                   ],
-                )
-            )
+                ))
           ],
         ),
       ),
