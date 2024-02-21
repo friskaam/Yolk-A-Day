@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:yolk_a_day/user_profile/screen/user_profile.dart';
 
 class NavigationMenu extends StatelessWidget {
   const NavigationMenu({super.key});
@@ -37,6 +38,6 @@ class NavigationController extends GetxController {
     Container(color: Colors.blue),      // replace the container with challenge screen
     Container(color: Colors.green),     // replace the container with statistics screen
     Container(color: Colors.yellow),    // replace the container with social screen
-    Container(color: Colors.orange),    // replace the container with profile screen
+    const UserProfile(),    // replace the container with profile screen
   ];
 }
