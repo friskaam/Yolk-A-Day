@@ -20,6 +20,21 @@ class Loaders {
     );
   }
 
+  static successSnackBar({required title, message = ''}) {
+    Get.snackbar(
+        title,
+        message,
+        isDismissible: true,
+        shouldIconPulse: true,
+        colorText: Colors.white,
+        backgroundColor: Colors.green,
+        snackPosition: SnackPosition.TOP,
+        duration: const Duration(seconds: 3),
+        margin: const EdgeInsets.all(20),
+        icon: const Icon(Iconsax.copy_success, color: Colors.white,)
+    );
+  }
+
   static warningSnackBar({required title, message = ''}) {
     Get.snackbar(
       title,
