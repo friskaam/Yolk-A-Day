@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:yolk_a_day/component/navigation_menu.dart';
+
+import 'authentication/screen/welcome.dart';
+import 'bindings/binding.dart';
 
 class App extends StatelessWidget {
   const App({
@@ -10,10 +12,9 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      theme: ThemeData(
-        fontFamily: 'Outfit',
-      ),
-      home: NavigationMenu(),
+      debugShowCheckedModeBanner: false,
+      initialBinding: GeneralBindings(),
+      home: const Welcome(),
     );
   }
 }

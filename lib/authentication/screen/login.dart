@@ -1,18 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:iconsax/iconsax.dart';
 import 'package:yolk_a_day/authentication/controllers/login_controller.dart';
-//import 'package:yolk_a_day/authentication/controllers/register_controller.dart';
+import 'package:yolk_a_day/authentication/validators/validator.dart';
 
-import '../../component/navigation_menu.dart';
-
-class Login extends StatefulWidget {
+class Login extends StatelessWidget {
   const Login({super.key});
 
-  @override
-  State<Login> createState() => _LoginState();
-}
-
-class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(LoginController());
@@ -62,58 +56,81 @@ class _LoginState extends State<Login> {
                   children: [
                     TextFormField(
                       controller: controller.emailUsername,
+                      validator: (value) => FormValidator.validateEmail(value),
                       decoration: const InputDecoration(
-                          focusedBorder: OutlineInputBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(5)),
-                              borderSide: BorderSide(
-                                  color: Color.fromARGB(255, 248, 192, 56),
-                                  width: 3,
-                                  style: BorderStyle.solid)),
-                          enabledBorder: OutlineInputBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(5)),
-                              borderSide: BorderSide(
-                                  color: Color.fromARGB(255, 248, 192, 56),
-                                  width: 3,
-                                  style: BorderStyle.solid)),
-                          labelText: 'Username/Email',
-                          labelStyle: TextStyle(
-                              color: Colors.black,
-                              fontSize: 15,
-                              fontFamily: 'Outfit',
-                              fontWeight: FontWeight.normal)),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(5)),
+                          borderSide: BorderSide(
+                            color: Color.fromARGB(255, 248, 192, 56),
+                            width: 3,
+                            style: BorderStyle.solid,
+                          ),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(5)),
+                          borderSide: BorderSide(
+                            color: Color.fromARGB(255, 248, 192, 56),
+                            width: 3,
+                            style: BorderStyle.solid,
+                          ),
+                        ),
+                        labelText: 'Username/Email',
+                        labelStyle: TextStyle(
+                          color: Colors.black,
+                          fontSize: 15,
+                          fontFamily: 'Outfit',
+                          fontWeight: FontWeight.normal,
+                        ),
+                      ),
                       style: const TextStyle(),
-                      //validator: ,
+                      // validator: ,
                     ),
                     const SizedBox(
                       height: 15,
                     ),
-                    TextFormField(
-                      controller: controller.password,
-                      decoration: const InputDecoration(
-                          focusedBorder: OutlineInputBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(5)),
-                              borderSide: BorderSide(
-                                  color: Color.fromARGB(255, 248, 192, 56),
-                                  width: 3,
-                                  style: BorderStyle.solid)),
-                          enabledBorder: OutlineInputBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(5)),
-                              borderSide: BorderSide(
-                                  color: Color.fromARGB(255, 248, 192, 56),
-                                  width: 3,
-                                  style: BorderStyle.solid)),
+                    Obx(
+                      () => TextFormField(
+                        controller: controller.password,
+                        obscureText: controller.hidePassword.value,
+                        decoration: InputDecoration(
+                          focusedBorder: const OutlineInputBorder(
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(5),
+                            ),
+                            borderSide: BorderSide(
+                              color: Color.fromARGB(255, 248, 192, 56),
+                              width: 3,
+                              style: BorderStyle.solid,
+                            ),
+                          ),
+                          enabledBorder: const OutlineInputBorder(
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(5),
+                            ),
+                            borderSide: BorderSide(
+                              color: Color.fromARGB(255, 248, 192, 56),
+                              width: 3,
+                              style: BorderStyle.solid,
+                            ),
+                          ),
+                          suffixIcon: IconButton(
+                            onPressed: () => controller.hidePassword.value =
+                                !controller.hidePassword.value,
+                            icon: Icon(controller.hidePassword.value
+                                ? Iconsax.eye_slash
+                                : Iconsax.eye),
+                          ),
                           labelText: 'Password',
-                          labelStyle: TextStyle(
-                              color: Colors.black,
-                              fontSize: 15,
-                              fontFamily: 'Outfit',
-                              fontWeight: FontWeight.normal)),
-                      style: const TextStyle(),
-                      //validator: ,
+                          labelStyle: const TextStyle(
+                            color: Colors.black,
+                            fontSize: 15,
+                            fontFamily: 'Outfit',
+                            fontWeight: FontWeight.normal,
+                          ),
+                        ),
+                        style: const TextStyle(),
+                        // validator: ,
+                      ),
                     ),
                     const SizedBox(
                       height: 47,
@@ -124,7 +141,7 @@ class _LoginState extends State<Login> {
                           style: ElevatedButton.styleFrom(
                               backgroundColor:
                                   const Color.fromARGB(255, 248, 192, 56)),
-                          onPressed: () => Get.to(() => const NavigationMenu()),
+                          onPressed: () => controller.login(),
                           child: const Text('Log In')),
                     )
                   ],

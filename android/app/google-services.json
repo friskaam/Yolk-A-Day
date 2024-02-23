@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "298517615242",
+    "project_id": "yolk-a-day",
+    "storage_bucket": "yolk-a-day.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:298517615242:android:dfe549c3248556a70f1373",
+        "android_client_info": {
+          "package_name": "com.gudetama.yolk_a_day"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "298517615242-5g5aji713s02k7vesqnherm0ucsvm0ti.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gudetama.yolk_a_day",
+            "certificate_hash": "4e60e3df366fd89295aa3be68796ab2dd4458064"
+          }
+        },
+        {
+          "client_id": "298517615242-cf3gqtvrlvebd9oupq4kgms9v7lb9t66.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtEoOAxCs4vapMaODd9GBmGqvWZFs6RSI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "298517615242-cf3gqtvrlvebd9oupq4kgms9v7lb9t66.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "298517615242-iel9aqi9f8ddukljsdsl68uo079ttvle.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.gudetama.yolkADay"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

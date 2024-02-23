@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:yolk_a_day/data/repositories/auth/network_manager.dart';
 
