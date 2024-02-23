@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:yolk_a_day/authentication/screen/challange.dart';
 import 'package:yolk_a_day/authentication/screen/home.dart';
+import 'package:yolk_a_day/authentication/screen/profile.dart';
 import 'package:yolk_a_day/authentication/screen/statistic/statistic.dart';
 
 class NavigationMenu extends StatelessWidget {
@@ -120,7 +121,6 @@ class NavigationController extends GetxController {
     Challange(), // replace the container with challenge screen
     Statistic(), // replace the container with statistics screen
     Container(color: Colors.yellow), // replace the container with social screen
-    Container(
-        color: Colors.orange), // replace the container with profile screen
+    Profile() // replace the container with profile screen
   ];
 }

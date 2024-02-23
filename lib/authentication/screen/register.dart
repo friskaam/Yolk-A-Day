@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:iconsax/iconsax.dart';
 import 'package:yolk_a_day/authentication/controllers/register_controller.dart';
 import 'package:yolk_a_day/authentication/validators/validator.dart';
 
