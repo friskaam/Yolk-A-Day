@@ -114,8 +114,11 @@ class Login extends StatelessWidget {
                             ),
                           ),
                           suffixIcon: IconButton(
-                            onPressed: () => controller.hidePassword.value = !controller.hidePassword.value,
-                              icon: Icon(controller.hidePassword.value ? Iconsax.eye_slash: Iconsax.eye),
+                            onPressed: () => controller.hidePassword.value =
+                                !controller.hidePassword.value,
+                            icon: Icon(controller.hidePassword.value
+                                ? Iconsax.eye_slash
+                                : Iconsax.eye),
                           ),
                           labelText: 'Password',
                           labelStyle: const TextStyle(

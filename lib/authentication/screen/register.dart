@@ -4,9 +4,14 @@ import 'package:iconsax/iconsax.dart';
 import 'package:yolk_a_day/authentication/controllers/register_controller.dart';
 import 'package:yolk_a_day/authentication/validators/validator.dart';
 
-class Register extends StatelessWidget {
+class Register extends StatefulWidget {
   const Register({super.key});
 
+  @override
+  State<Register> createState() => _RegisterState();
+}
+
+class _RegisterState extends State<Register> {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(RegisterController());
@@ -227,7 +232,9 @@ class Register extends StatelessWidget {
                           style: ElevatedButton.styleFrom(
                               backgroundColor:
                                   const Color.fromARGB(255, 248, 192, 56)),
-                          onPressed: () => controller.register(),
+                          onPressed: () => {
+                                //controller.register()
+                              },
                           child: const Text('Register')),
                     )
                   ],

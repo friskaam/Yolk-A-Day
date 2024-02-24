@@ -15,13 +15,14 @@ class NavigationMenu extends StatelessWidget {
           height: 80,
           elevation: 0,
           selectedIndex: controller.selectedIndex.value,
-          onDestinationSelected: (index) => controller.selectedIndex.value = index,
+          onDestinationSelected: (index) =>
+              controller.selectedIndex.value = index,
           destinations: const [
             NavigationDestination(icon: Icon(Iconsax.home), label: 'Home'),
             NavigationDestination(icon: Icon(Icons.home), label: 'Challenge'),
             NavigationDestination(icon: Icon(Iconsax.home), label: 'Statistic'),
             NavigationDestination(icon: Icon(Iconsax.user1), label: 'Social'),
-            NavigationDestination(icon: Icon(Iconsax.user),  label: 'Profile'),
+            NavigationDestination(icon: Icon(Iconsax.user), label: 'Profile'),
           ],
         ),
       ),
@@ -34,10 +35,12 @@ class NavigationController extends GetxController {
   final Rx<int> selectedIndex = 0.obs;
 
   final screens = [
-    Container(color: Colors.red),       // replace the container with home screen
-    Container(color: Colors.blue),      // replace the container with challenge screen
-    Container(color: Colors.green),     // replace the container with statistics screen
-    Container(color: Colors.yellow),    // replace the container with social screen
-    const UserProfile(),    // replace the container with profile screen
+    Container(color: Colors.red), // replace the container with home screen
+    Container(
+        color: Colors.blue), // replace the container with challenge screen
+    Container(
+        color: Colors.green), // replace the container with statistics screen
+    Container(color: Colors.yellow), // replace the container with social screen
+    const UserProfile(), // replace the container with profile screen
   ];
 }

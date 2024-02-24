@@ -9,9 +9,9 @@ import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'app.dart';
 
 Future<void> main() async {
-
   // TODO: widgets binding
-  final WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  final WidgetsBinding widgetsBinding =
+      WidgetsFlutterBinding.ensureInitialized();
 
   // TODO: add GetX local storage
   await GetStorage.init();
@@ -20,10 +20,8 @@ Future<void> main() async {
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
 
   // TODO: initialize firebase & authentication
-  await Firebase.initializeApp(
-      options: DefaultFirebaseOptions.currentPlatform)
-      .then((FirebaseApp value) => Get.put(AuthenticationRepository())
-  );
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform)
+      .then((FirebaseApp value) => Get.put(AuthenticationRepository()));
 
   runApp(const App());
 }
